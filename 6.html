@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="6.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+            <nav class="navbar navbar-expand-lg navbar-light bg-lightfixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="#"><img src="data:image/png;base64,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" class="image"/></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ml-auto ">
+                            <a class="nav-link active" href="#homesection">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link active" href="#wcusection">Crazy deals</a>
+                            <a class="nav-link active" href="#exploresection">Explore Our Menu</a>
+                            <a class="nav-link active" href="#deliverysection">Delivery & Payment</a>
+                            <a class="nav-link active" href="#followsection">Follow Us</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="banner-container d-flex flex-column justify-content-center" id="homesection">
+                <div class="text-center">
+                    <h1 class="banner-heading mb-3">Get the Best Clothing</h1>
+                    <p class="banner-caption mb-4">Style and Fashion</p>
+                        <button class="banner-button1 mr-3">Orders</button>
+                        <button class="banner-button2">Wishlist</button>
+                </div> 
+            </div>
+            <div class="wcu-section pt-5 pb-5" id="wcusection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="wcu-section-heading">CRAZY DEALS</h1>
+                            <p class="wcu-section-description">Unbelievable discounts and mind-blowing offers on top-notch products - indulge in the madness of crazy deals.</p>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="wcu-section-card1 p-3 mb-3">
+                                <img src="https://www.houseofanecdotes.com/cdn/shop/articles/15b.jpg?v=1665499304&width=800" class="wcu-section-image"/>
+                                <h1 class="wcu-section-cardtitle mt-3">Ethnic wear dresses</h1>
+                                <p class="wcu-section-carddescription">Elevate your style with timeless elegance – explore a mesmerizing collection of ethnic wear dresses that celebrate tradition with a contemporary flair.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="wcu-section-card1 p-3 mb-3">
+                                <img src="https://static-assets.business.amazon.com/assets/in/7th-feb/Resize_Cooking_626_417_0202.jpg.transform/width-2216/image.jpg" class="wcu-section-image"/>
+                                <h1 class="wcu-section-cardtitle mt-3">Home appliances</h1>
+                                <p class="wcu-section-carddescription">Transform your living space. Discover a world of innovative home appliances designed to simplify and enhance your everyday life.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="wcu-section-card1 p-3 mb-3">
+                                <img src="https://www.nykaa.com/beauty-blog/wp-content/uploads/images/revamp/10-beauty-essentials-every-woman_OI.jpg" class="wcu-section-image"/>
+                                <h1 class="wcu-section-cardtitle mt-3">Beauty products</h1>
+                                <p class="wcu-section-carddescription">Unlock your radiance with a curated selection of beauty essentials. Elevate your self-care routine and embrace the glow with our premium beauty products.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="explore-section pb-5 pt-5" id="exploresection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="explore-heading-section">Explore Menu</h1>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="shadow-lg  menu-item-card mb-5 p-3">
+                                <img src="https://ajacreation.com/cdn/shop/articles/Top_10_Must_Have.jpg?v=1686886124&width=1000" class="image1 w-100"/>
+                                <h1 class="menu-card-title">Wome Ethnic Wear</h1>
+                                <a href="" class="menu-item-link">View all
+                                    <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd"d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="shadow menu-item-card p-3 mb-3">
+                              <img
+                                src="https://n.nordstrommedia.com/id/b5b8255b-f7db-4d93-be13-1dbbd81675ba.jpeg?h=600&w=750"
+                                class="image1 w-100"
+                              />
+                              <h1 class="menu-card-title">Men Casual Wear</h1>
+                              <a href="" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="menu-item-card shadow p-3 mb-3">
+                              <img
+                                src="https://images.meesho.com/images/products/63662694/mxphe_512.webp"
+                                class="image1 w-100"
+                              />
+                              <h1 class="menu-card-title">Western Wear</h1>
+                              <a href="" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="menu-item-card shadow p-3 mb-3">
+                              <img
+                                src="https://www.jumpusa.in/cdn/shop/articles/Activewear.jpg?v=1671261858"
+                                class="image1 w-100"
+                              />
+                              <h1 class="menu-card-title">Sports Wear</h1>
+                              <a href="" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="menu-item-card shadow p-3 mb-3">
+                              <img
+                                src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-26046,resizemode-75,msid-100623363/news/how-to/how-to-choose-safe-kids-wear-tips-for-avoiding-harmful-materials-and-chemicals.jpg"
+                                class="image1 w-100"
+                              />
+                              <h1 class="menu-card-title">Kids Wear</h1>
+                              <a href="" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="menu-item-card shadow p-3 mb-3">
+                              <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl7dv6X4Z5j46WJKyMX77Y4C8j6WIFhwbGsQ&usqp=CAU"
+                                class="image1 w-100"
+                              />
+                              <h1 class="menu-card-title">Watches</h1>
+                              <a href="" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="menu-item-card shadow p-3 mb-3">
+                              <img
+                                src="https://lh5.googleusercontent.com/yUoajluKq0BehBhWG2QUgGpRFwR_PaJmpJHjtGC6fyD4j_DRjwcKnH0Sdm7r-9DhuLlSB__VlTjVroHtH_SlFV7HZvCcO6ScHgjulVcOWwHEMA4GWJttnsHeo-0zxl6C3hVDDZ3zPofnOGYBIQB2me4"
+                                class="image1 w-100"
+                              />
+                              <h1 class="menu-card-title">Office Wear</h1>
+                              <a href="" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="menu-item-card shadow p-3 mb-3">
+                              <img
+                                src="https://assets.vogue.in/photos/5ea1660428845e0008c7ecfd/2:3/w_2560%2Cc_limit/Bridal-gold-jewellery.jpg"
+                                class="image1 w-100"
+                              />
+                              <h1 class="menu-card-title">Jewellery</h1>
+                              <a href="" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="menu-item-card shadow p-3 mb-3">
+                              <img
+                                src="https://static-assets.business.amazon.com/assets/in/7th-feb/Resize_Kitchen_626_417_0202.jpg.transform/width-2216/image.jpg"
+                                class="image1 w-100"
+                              />
+                              <h1 class="menu-card-title">Home appliances</h1>
+                              <a href="" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="menu-item-card shadow p-3 mb-3">
+                              <img
+                                src="https://i.pinimg.com/originals/e2/40/8c/e2408c49ac2bfe0be1d1302a91fafb58.png"
+                                class="image1 w-100"
+                              />
+                              <h1 class="menu-card-title">Beauty and Makeup</h1>
+                              <a href="" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="menu-item-card shadow p-3 mb-3">
+                              <img
+                                src="https://www.hindustantimes.com/ht-img/img/2023/11/06/550x309/nhjbk_1699257765345_1699257791056.jpg"
+                                class="image1 w-100"
+                              />
+                              <h1 class="menu-card-title">Trolleys and Luggage</h1>
+                              <a href="" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-md-6 col-lg-3">
+                            <div class="menu-item-card shadow p-3 mb-3">
+                              <img
+                                src="https://images.hindustantimes.com/img/2022/06/10/1600x900/bags_backpacks_under_300_1654888453536_1654888478935.jpg"
+                                class="image1 w-100"
+                              />
+                              <h1 class="menu-card-title">Bags and Bagpacks</h1>
+                              <a href="" class="menu-item-link">
+                                View All
+                                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+              <div class="delivery-and-payment-section pt-5 pb-5" id="deliverysection">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12 col-md-5 order-1 order-md-2">
+                      <div class="text-center">
+                        <img
+                          src="https://i0.wp.com/vpurshan.wpcomstaging.com/wp-content/uploads/2023/01/Cash-on-Delivery.jpg?fit=1200%2C800&ssl=1"
+                          alt=""
+                          class="delivery-and-payment-section-img"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-7 order-2 order-md-1">
+                      <h1 class="delivery-and-payment-section-heading">
+                        Delivery and Payment
+                      </h1>
+                      <p class="delivery-and-payment-section-description">
+                        "Effortless shopping at your fingertips: prompt deliveries ensure you get what you love, while secure payment options guarantee peace of mind. Experience convenience and reliability as we bring your purchases to your doorstep, simplifying both the process and your life."
+                      </p>
+                      <button class="custom-button">Order Now</button>
+                      <div class="mt-3">
+                        <img
+                          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/visa-card-img.png"
+                          class="payment-card-img"
+                        />
+                        <img
+                          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/american-express-img.png"
+                          class="payment-card-img"
+                        />
+                        <img
+                          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/master-card-img.png"
+                          class="payment-card-img"
+                        />
+                        <img
+                          src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/paypal-card-img.png"
+                          class="payment-card-img"
+                        />
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+
+
+
+
+
+              <div class="follow-us-section pt-5 pb-5" id="followsection">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <h1 class="follow-us-section-heading">Follow Us</h1>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-flex flex-row justify-content-center">
+                        <div class="follow-us-icon-container">
+                          <i class="fab fa-twitter icon"></i>
+                        </div>
+                        <div class="follow-us-icon-container">
+                          <i class="fab fa-instagram icon"></i>
+                        </div>
+                        <div class="follow-us-icon-container">
+                          <i class="fab fa-facebook icon"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer-section pt-5 pb-5">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12 text-center">
+                      <img
+                        src="data:image/png;base64,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"
+                        class="food-munch-logo"
+                      />
+                      <h1 class="footer-section-mail-id">orderyourway</h1>
+                      <p class="footer-section-address">
+                        Autonagar,Visakhapatnam,Andhra Pradesh,India.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+    </body>
+</html>
